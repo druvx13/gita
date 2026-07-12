@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhagavad Gita</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Bhagavad Gita</h1>
+        <p class="subtitle">Sanskrit · IAST · Translation · Audio</p>
+      </div>
+      <div class="controls">
+        <label>
+          Chapter
+          <select id="chapterSelect"></select>
+        </label>
+        <label>
+          Language
+          <select id="languageSelect">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+          </select>
+        </label>
+        <label>
+          Translator
+          <select id="authorSelect"></select>
+        </label>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="chapter-panel">
+        <h2>Chapters</h2>
+        <ul id="chapterList"></ul>
+      </aside>
+
+      <section class="content">
+        <article class="chapter-summary">
+          <h2 id="chapterTitle"></h2>
+          <p id="chapterMeta"></p>
+          <p id="chapterSummary"></p>
+        </article>
+
+        <section>
+          <h3>Verses</h3>
+          <div id="verseCount" class="muted"></div>
+          <div id="verseContainer" class="verse-container"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="verseTemplate">
+      <article class="verse-card">
+        <header class="verse-header">
+          <h4 class="verse-title"></h4>
+        </header>
+        <pre class="sanskrit"></pre>
+        <pre class="iast"></pre>
+        <div class="translation-box">
+          <h5>Translation</h5>
+          <p class="translation"></p>
+        </div>
+        <details class="word-meanings-box">
+          <summary>Word meanings</summary>
+          <p class="word-meanings"></p>
+        </details>
+        <audio class="audio" controls preload="none"></audio>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+  </html>

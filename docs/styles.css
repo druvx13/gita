@@ -1,0 +1,204 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f3ea;
+  --surface: #fffef8;
+  --line: #e4dac5;
+  --text: #2e2a20;
+  --muted: #6a6456;
+  --accent: #8e2e24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 640px);
+}
+
+label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.5rem;
+  background: #fff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 90px);
+}
+
+.chapter-panel {
+  border-right: 1px solid var(--line);
+  padding: 1rem;
+  background: #fff;
+}
+
+.chapter-panel h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+#chapterList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+#chapterList button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+}
+
+#chapterList button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.chapter-summary {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.chapter-summary h2,
+.chapter-summary p {
+  margin: 0 0 0.6rem;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.verse-container {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.verse-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.verse-title {
+  margin: 0;
+}
+
+pre {
+  margin: 0.6rem 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.sanskrit {
+  font-size: 1.05rem;
+}
+
+.iast {
+  color: var(--muted);
+}
+
+.translation-box,
+.word-meanings-box {
+  margin-top: 0.6rem;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.6rem;
+}
+
+.translation-box h5 {
+  margin: 0 0 0.3rem;
+}
+
+.translation,
+.word-meanings {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+audio {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 960px) {
+  .site-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  #chapterList {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
